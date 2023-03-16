@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ban_co_caro</title>
+</head>
+<body>
+<h2>Caro Game Simple</h2> <hr>
+<p id ='result'></p>
+<button id="change_btn" onclick="changeVal()">Change Value</button>
+</body>
+</html>
+<script>
+    // let tab = document.getElementById('tab');
+    // let board = [];
+    // for (let i = 0; i < 5; i++) {
+    //     board[i] = [0, 0, 0, 0, 0];
+    // }
+    // function showString(board) {
+    //     return (board.join(' ') + "<br>");
+    // }
+    // tab.innerHTML = showString(board[0]) + showString(board[1]) + showString(board[2]) + showString(board[3]) + showString(board[4]);
+    //
+    // function changeVal() {
+    //     let x = +prompt('nhập vào vị trí hàng');
+    //     let y = +prompt('nhập vào vị trí cột');
+    //     board[x][y] = 'x';
+    //     tab.innerHTML = showString(board[0]) + showString(board[1]) + showString(board[2]) + showString(board[3]) + showString(board[4]);
+    // }
+
+    let tab = [];
+    let result = document.getElementById('result');
+    for (let i = 0; i < 5; i++) {
+        tab[i] = [0,0,0,0,0];
+        result.innerHTML += tab[i].join(' ') + '<br>';
+    }
+
+    function changeVal() {
+        let x = +prompt('Nhập vào vị trị hàng');
+        let y = +prompt('Nhập vào vị trí cột');
+        if ((x < 5 && x > 0) && (y < 5 && y > 0)){
+            tab[x][y] = 'x';
+            result.innerHTML = '';
+            for (let j = 0; j < 5; j++) {
+                result.innerHTML += tab[j].join(' ') + '<br>';
+            }
+        } else {
+            result.innerHTML = 'vị trị nhập vào không nằm trong bàn cờ';
+        }
+    }
+
+</script>
